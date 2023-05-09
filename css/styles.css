@@ -1,0 +1,11 @@
+*{
+    background-color: black;
+}
+.container{
+    /* PARA DIVIDIR EL HTML EN 2 */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-size: cover;
+    height: 1100vh
+    /* ------------------------------- */
+}
