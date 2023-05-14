@@ -9,7 +9,7 @@ const accesoDenegado = document.querySelector("#accesoDenegado");
 function validarUsuario(usuario, password) {
     for (const users of usuarios) {
         if (usuario === users.nombre && password == users.passw) {
-            return true;
+            return users;
         }
     } return false;
 }
@@ -18,11 +18,14 @@ function loogin() {
     event.preventDefault();
     const usuario = document.getElementById('usuario').value;
     const password = parseInt(document.getElementById('password').value);
-    if (validarUsuario(usuario, password) == true) {
-        window.location="onset.html";
-    } else {
-        accesoDenegado.innerHTML = "Nombre o contraseña incorrecta vuelve a intentar";
+    const contentFunc = validarUsuario(usuario,password); //Almacena la funcion para despues mostrar la info que coincida :D
+    if (contentFunc) {
+        var jsonInfo = JSON.stringify(contentFunc);
+        localStorage.setItem("info",jsonInfo);
+        window.location='./onset.html';
+    }
+    if (contentFunc===false) {
+        accesoDenegado.innerHTML='Contraseña o usuario incorrecto, vuelve a intentarlo';
     }
 }
 ingresar.addEventListener("click", loogin);
-
