@@ -1,11 +1,47 @@
-*{
-    background-color: black;
+body{
+    margin: 0;
+    background-color: rgba(17, 187, 62, 0.642);
 }
 .container{
-    /* PARA DIVIDIR EL HTML EN 2 */
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: rgb(14, 15, 15);
+    height: 100vh;
     background-size: cover;
-    height: 1100vh
-    /* ------------------------------- */
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(14, 15, 15);
+    border-right: 1px solid rgb(14, 119, 49);
+    color: rgb(9, 125, 17);
+    justify-content: center;
+    align-items: center;
+}
+.left img{
+    filter:drop-shadow(4px 4px 6px rgba(21, 210, 122, 0.626));
+    width: 18.75rem;
+}
+.left h1{
+    text-shadow: 0 0 0.2em rgba(90, 255, 68, 0.638);
+    margin-bottom:1.5625rem ;
+}
+.right{
+    display: flex;
+    justify-content:center;
+    color: darkgreen;
+}
+.right form{
+    margin-top:9.375rem;
+}
+.right .me-2{
+    margin-top:1.5625rem ;
+    margin-bottom: 1.5625rem;
+    filter:drop-shadow(4px 6px 12px rgba(21, 210, 122, 0.626));
+}
+.right .me-3{
+    filter:drop-shadow(4px 6px 12px rgba(21, 210, 122, 0.626));
+}
+.right .btn{
+    margin-top: 1.5625rem;
 }
